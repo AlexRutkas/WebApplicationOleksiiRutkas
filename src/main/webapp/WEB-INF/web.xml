@@ -1,0 +1,265 @@
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" version="2.4">
+    <request-character-encoding>UTF-8</request-character-encoding>
+    <servlet>
+        <servlet-name>HelloServlet</servlet-name>
+        <servlet-class>servlets.HelloServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HelloServlet</servlet-name>
+        <url-pattern>/greeting</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RedirectServlet</servlet-name>
+        <servlet-class>servlets.RedirectServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RedirectServlet</servlet-name>
+        <url-pattern>/redirect</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ForwardServlet</servlet-name>
+        <servlet-class>servlets.ForwardServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ForwardServlet</servlet-name>
+        <url-pattern>/forward</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CounterServlet</servlet-name>
+        <servlet-class>servlets.SessionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CounterServlet</servlet-name>
+        <url-pattern>/counter</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UserServlet</servlet-name>
+        <servlet-class>servlets.UserAuthServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+<!--    Cookies servlets-->
+    <servlet>
+        <servlet-name>SetCookies</servlet-name>
+        <servlet-class>servlets.cookies.SetCookiesServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SetCookies</servlet-name>
+        <url-pattern>/setcookies</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetCookies</servlet-name>
+        <servlet-class>servlets.cookies.GetCookiesServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetCookies</servlet-name>
+        <url-pattern>/getcookies</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteCookies</servlet-name>
+        <servlet-class>servlets.cookies.DeleteCookiesServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteCookies</servlet-name>
+        <url-pattern>/delcookies</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetTitles</servlet-name>
+        <servlet-class>servlets.jdbc.SubjectsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetTitles</servlet-name>
+        <url-pattern>/subjects</url-pattern>
+    </servlet-mapping>
+    <servlet>
+
+        <servlet-name>ReadServlet</servlet-name>
+        <servlet-class>servlets.jdbc.ReadServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ReadServlet</servlet-name>
+        <url-pattern>/testread</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PageJsp</servlet-name>
+        <jsp-file>/pages/page.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PageJsp</servlet-name>
+        <url-pattern>/read</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>AuthFilter</filter-name>
+        <filter-class>filters.AuthFilterDep</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AuthFilter</filter-name>
+        <url-pattern>/departs</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AuthFilter</filter-name>
+        <url-pattern>/pages/*</url-pattern>
+    </filter-mapping>
+
+
+    <filter>
+        <filter-name>AuthFilter2</filter-name>
+        <filter-class>filters.AuthFilterEmpl</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AuthFilter2</filter-name>
+        <url-pattern>/emplos</url-pattern>
+    </filter-mapping>
+
+    <servlet>
+        <servlet-name>LoginPage</servlet-name>
+        <jsp-file>/pages/login.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginPage</servlet-name>
+        <url-pattern>/departs</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>UpdatePage</servlet-name>
+        <jsp-file>/pages/update.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdatePage</servlet-name>
+        <url-pattern>/update</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UpdatePPage</servlet-name>
+        <jsp-file>/pages/updatePos.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdatePPage</servlet-name>
+        <url-pattern>/updateP</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>UpdateEPage</servlet-name>
+        <jsp-file>/pages/updateEmpl.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateEPage</servlet-name>
+        <url-pattern>/updateE</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeletePage</servlet-name>
+        <jsp-file>/pages/deleteDep.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeletePage</servlet-name>
+        <url-pattern>/delete</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteEPage</servlet-name>
+        <jsp-file>/pages/deleteEmpl.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteEPage</servlet-name>
+        <url-pattern>/deleteE</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeletePPage</servlet-name>
+        <jsp-file>/pages/deletePos.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeletePPage</servlet-name>
+        <url-pattern>/deleteP</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>CharsetFilter</filter-name>
+        <filter-class>filters.CharsetFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>CharsetFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <filter>
+        <filter-name>LoggerFilter</filter-name>
+        <filter-class>filters.LoggingFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>LoggerFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>servlets.LogoutServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Localization</servlet-name>
+        <servlet-class>servlets.LanguageSelector</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Localization</servlet-name>
+        <url-pattern>/confirm</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EmploeerServlet</servlet-name>
+        <servlet-class>servlets.EmploeerPageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EmploeerServlet</servlet-name>
+        <url-pattern>/emplos</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PdfCreator</servlet-name>
+        <servlet-class>servlets.PdfCreatorServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PdfCreator</servlet-name>
+        <url-pattern>/getPdfFile</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>JsonFile</servlet-name>
+        <servlet-class>servlets.GenerateJsonFileServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>JsonFile</servlet-name>
+        <url-pattern>/downloadJson</url-pattern>
+    </servlet-mapping>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/pages/error404.jsp</location>
+    </error-page>
+
+    <filter>
+        <filter-name>AuthFilter3</filter-name>
+        <filter-class>filters.AuthFilterPosit</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AuthFilter3</filter-name>
+        <url-pattern>/posits</url-pattern>
+    </filter-mapping>
+</web-app>

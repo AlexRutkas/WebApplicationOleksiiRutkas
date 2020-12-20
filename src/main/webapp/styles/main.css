@@ -1,0 +1,13 @@
+body {
+    background: bisque;
+}
+
+div {
+    border: 2px solid blueviolet;
+    height: 50px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5em auto auto;
+}
